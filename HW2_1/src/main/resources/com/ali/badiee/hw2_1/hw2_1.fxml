@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+  Copyright (c) 2015, 2019, Gluon and/or its affiliates.
+  All rights reserved. Use is subject to license terms.
+
+  This file is available and licensed under the following license:
+
+  Redistribution and use in source and binary forms, with or without
+  modification, are permitted provided that the following conditions
+  are met:
+
+  - Redistributions of source code must retain the above copyright
+    notice, this list of conditions and the following disclaimer.
+  - Redistributions in binary form must reproduce the above copyright
+    notice, this list of conditions and the following disclaimer in
+    the documentation and/or other materials provided with the distribution.
+  - Neither the name of Oracle Corporation nor the names of its
+    contributors may be used to endorse or promote products derived
+    from this software without specific prior written permission.
+
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+  "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+  LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+  A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
+  OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+  SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+  LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+  DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+  THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+  OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ali.badiee.hw2_1.HW2Controller">
+  <children>
+    <MenuBar VBox.vgrow="NEVER">
+      <menus>
+        <Menu mnemonicParsing="false" text="Program">
+          <items>
+            <MenuItem fx:id="quit" mnemonicParsing="false" onAction="#exitProgram" text="Quit" />
+          </items>
+        </Menu>
+      </menus>
+    </MenuBar>
+    <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
+      <children>
+            <TextField fx:id="capacityInput" layoutX="135.0" layoutY="75.0" prefHeight="25.0" prefWidth="107.0" promptText="Capacity">
+               <cursor>
+                  <Cursor fx:constant="TEXT" />
+               </cursor></TextField>
+            <Label contentDisplay="CENTER" layoutX="41.0" layoutY="77.0" text="Capacity:" textAlignment="CENTER" textOverrun="CLIP">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <Label layoutX="135.0" layoutY="14.0" text="Fractional Knapsack Probelm Solver" textOverrun="CENTER_ELLIPSIS">
+               <font>
+                  <Font name="System Bold" size="22.0" />
+               </font>
+            </Label>
+            <ChoiceBox fx:id="itemSelection" layoutX="135.0" layoutY="117.0" prefHeight="25.0" prefWidth="107.0">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></ChoiceBox>
+            <TextField fx:id="valueInput" layoutX="135.0" layoutY="151.0" prefHeight="25.0" prefWidth="107.0" promptText="Value">
+               <cursor>
+                  <Cursor fx:constant="TEXT" />
+               </cursor></TextField>
+            <Button fx:id="AddButton" contentDisplay="CENTER" layoutX="253.0" layoutY="117.0" mnemonicParsing="false" onAction="#addButton" style="-fx-background-color: #004242; -fx-text-fill: White;" text="+" textAlignment="CENTER">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></Button>
+            <Label contentDisplay="CENTER" layoutX="60.0" layoutY="117.0" text="Items:">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Label>
+            <Separator layoutX="116.0" layoutY="69.0" orientation="VERTICAL" prefHeight="219.0" prefWidth="6.0" />
+            <Separator layoutX="32.0" layoutY="55.0" prefHeight="6.0" prefWidth="575.0" />
+            <TextField fx:id="weightInput" layoutX="135.0" layoutY="186.0" prefHeight="25.0" prefWidth="107.0" promptText="Weight">
+               <cursor>
+                  <Cursor fx:constant="TEXT" />
+               </cursor></TextField>
+            <Button fx:id="calculateButton" defaultButton="true" layoutX="35.0" layoutY="242.0" mnemonicParsing="false" onAction="#calculateFKP" prefHeight="32.0" prefWidth="75.0" style="-fx-background-color: #50C878; -fx-text-fill: White;" text="Calculate">
+               <font>
+                  <Font size="14.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></Button>
+            <Label fx:id="resultLabel" alignment="CENTER" layoutX="135.0" layoutY="242.0" prefHeight="32.0" prefWidth="455.0" style="-fx-background-color: #E9E9E9;">
+               <font>
+                  <Font size="14.0" />
+               </font></Label>
+            <Button fx:id="DelButton" layoutX="285.0" layoutY="117.0" mnemonicParsing="false" onAction="#delButton" prefHeight="25.0" prefWidth="24.0" style="-fx-background-color: #004242; -fx-text-fill: White;" text="-" textAlignment="CENTER">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Label contentDisplay="CENTER" layoutX="66.0" layoutY="153.0" text="Value:" textAlignment="CENTER" textFill="#7a7878" textOverrun="CLIP">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <Label contentDisplay="CENTER" layoutX="55.0" layoutY="188.0" text="Weight:" textAlignment="CENTER" textFill="#7a7878" textOverrun="CLIP">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <Label layoutX="25.0" layoutY="308.0" style="-fx-text-fill: #536872;" text="* Fill Value and Weight and click + to add an item." />
+            <Label layoutX="25.0" layoutY="329.0" style="-fx-text-fill: #59260B;" text="* Select an item and click - to delete that item." />
+            <Label layoutX="24.0" layoutY="349.0" style="-fx-text-fill: #006262;" text="* Add capacity and some items and click Calculate for seeing the results." />
+            <Separator layoutX="21.0" layoutY="297.0" prefHeight="6.0" prefWidth="575.0" />
+      </children>
+    </AnchorPane>
+  </children>
+</VBox>
